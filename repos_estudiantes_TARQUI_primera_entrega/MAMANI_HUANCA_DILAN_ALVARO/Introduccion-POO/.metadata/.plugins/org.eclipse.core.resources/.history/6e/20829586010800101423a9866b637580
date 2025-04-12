@@ -1,0 +1,25 @@
+package Ejercicio_1;
+
+public class Persona {
+	private String nombre;
+	private int edad;
+	private String ciudad;
+	
+	
+	public Persona(String nomx, int edadx, String ciudadx) {
+		// TODO Auto-generated constructor stub
+		this.nombre=nomx;
+		this.edad=edadx;
+		this.ciudad=ciudadx;
+	}
+
+	//a) Agrega un método para mostrar el saludo: “Hola, soy {nombre} de {ciudad}”
+	public String toString() {
+	        return "Hola Soy: " + this.nombre + " de: " + this.ciudad + "]";
+	   }
+	//b) Crea tres personas y muestra su saludo.
+	
+	//c) Agrega un método para verificar si es mayor de edad
+	
+
+}

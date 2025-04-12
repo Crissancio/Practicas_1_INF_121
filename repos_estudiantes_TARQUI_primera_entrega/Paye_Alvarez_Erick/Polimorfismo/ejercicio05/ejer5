@@ -1,0 +1,56 @@
+class Oficina:
+    def __init__(self, sillas, escritorios, estanterias):
+        self.nroSillas = sillas
+        self.nroEscritorio = escritorios
+        self.nroEstanterias = estanterias
+    
+    def mostrar(self):
+        print("\nOficina:")
+        print(f"Sillas: {self.nroSillas}")
+        print(f"Escritorios: {self.nroEscritorio}")
+        print(f"Estanterías: {self.nroEstanterias}")
+    
+    def cantidadMuebles(self):
+        return self.nroSillas + self.nroEscritorio + self.nroEstanterias
+
+class Aula:
+    def __init__(self, nombre, capacidad, pupitres):
+        self.nombre = nombre
+        self.capacidad = capacidad
+        self.nropupitres = pupitres
+    
+    def mostrar(self):
+        print("\nAula:")
+        print(f"Nombre: {self.nombre}")
+        print(f"Capacidad: {self.capacidad}")
+        print(f"Pupitres: {self.nropupitres}")
+    
+    def cantidadMuebles(self):
+        return self.nropupitres
+
+class Laboratorio:
+    def __init__(self, nombre, capacidad, mesas, sillas):
+        self.nombre = nombre
+        self.capacidad = capacidad
+        self.nroMesas = mesas
+        self.nroSillas = sillas
+    
+    def mostrar(self):
+        print("\nLaboratorio:")
+        print(f"Nombre: {self.nombre}")
+        print(f"Capacidad: {self.capacidad}")
+        print(f"Mesas: {self.nroMesas}")
+        print(f"Sillas: {self.nroSillas}")
+    
+    def cantidadMuebles(self):
+        return self.nroMesas + self.nroSillas
+
+oficina1 = Oficina(5, 2, 3)
+oficina2 = Oficina(4, 1, 2)
+aula1 = Aula("Aula 101", 30, 25)
+aula2 = Aula("Aula 202", 40, 35)
+laboratorio1 = Laboratorio("Lab. Química", 20, 15, 20)
+
+for ambiente in [oficina1, oficina2, aula1, aula2, laboratorio1]:
+    ambiente.mostrar()
+    print(f"Total muebles: {ambiente.cantidadMuebles()}\n")

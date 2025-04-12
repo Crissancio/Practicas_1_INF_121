@@ -1,0 +1,39 @@
+class Computadora:
+    def __init__(self, cpu, ram, almacenamiento, gpu):
+        
+        self.cpu = cpu
+        self.ram = ram
+        self.almacenamiento = almacenamiento
+        self.gpu = gpu
+        self.estado = False  
+    
+    def encender(self):
+        self.estado = True
+        print("¡Computadora encendida!")
+    
+    def apagar(self):
+        self.estado = False
+        print("Computadora apagada")
+    
+    def mostrar_estado(self):
+        estado = "Encendida" if self.estado else "Apagada"
+        print(f"\nEstado de la computadora: {estado}")
+        if self.estado:
+            print("Componentes principales:")
+            print(f"- CPU: {self.cpu}")
+            print(f"- RAM: {self.ram}")
+            print(f"- Almacenamiento: {self.almacenamiento}")
+            print(f"- GPU: {self.gpu}")
+
+mi_pc = Computadora(
+    cpu="Intel Core i7-12700K",
+    ram="32GB DDR5",
+    almacenamiento="1TB SSD NVMe",
+    gpu="NVIDIA RTX 3080"
+)
+
+mi_pc.encender()
+mi_pc.mostrar_estado()
+
+mi_pc.apagar()
+mi_pc.mostrar_estado()

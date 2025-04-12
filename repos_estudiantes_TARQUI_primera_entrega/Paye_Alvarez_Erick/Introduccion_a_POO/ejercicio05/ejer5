@@ -1,0 +1,22 @@
+class Estudiante:
+    def __init__(self, nombre, nota_1, nota_2):
+        self.nombre = nombre
+        self.nota_1 = nota_1
+        self.nota_2 = nota_2
+    
+    def calcular_promedio(self):
+        return (self.nota_1 + self.nota_2) / 2
+    
+    def aprobo(self):
+        return self.calcular_promedio() >= 6
+
+estudiante1 = Estudiante("Ana", 7, 5)
+estudiante2 = Estudiante("Luis", 5, 5)
+estudiante3 = Estudiante("Marta", 8, 8)
+
+print("Resultados academicos:")
+for i, estudiante in enumerate([estudiante1, estudiante2, estudiante3], 1):
+    promedio = estudiante.calcular_promedio()
+    print(f"Estudiante {i}: {estudiante.nombre}")
+    print(f"  Promedio: {promedio:.2f}")
+    print(f"  Aprobo: {'Si' if estudiante.aprobo() else 'No'}\n")

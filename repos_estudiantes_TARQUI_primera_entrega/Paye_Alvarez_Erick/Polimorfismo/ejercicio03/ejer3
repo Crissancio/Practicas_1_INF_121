@@ -1,0 +1,61 @@
+class Cocinero:
+    def __init__(self, nombre, sueldo_mes, horas_extra, sueldo_hora):
+        self.nombre = nombre
+        self.sueldo_mes = sueldo_mes
+        self.horas_extra = horas_extra
+        self.sueldo_hora = sueldo_hora
+
+    def sueldo_total(self):
+        return self.sueldo_mes + (self.horas_extra * self.sueldo_hora)
+    
+    def sueldo_igual_a(self, x):
+        return self.sueldo_mes == x
+
+class Mesero:
+    def __init__(self, nombre, sueldo_mes, horas_extra, sueldo_hora, propina):
+        self.nombre = nombre
+        self.sueldo_mes = sueldo_mes
+        self.horas_extra = horas_extra
+        self.sueldo_hora = sueldo_hora
+        self.propina = propina
+
+    def sueldo_total(self):
+        return self.sueldo_mes + (self.horas_extra * self.sueldo_hora) + self.propina
+    
+    def sueldo_igual_a(self, x):
+        return self.sueldo_mes == x
+
+class Administrativo:
+    def __init__(self, nombre, sueldo_mes, cargo):
+        self.nombre = nombre
+        self.sueldo_mes = sueldo_mes
+        self.cargo = cargo
+
+    def sueldo_total(self):
+        return self.sueldo_mes
+    
+    def sueldo_igual_a(self, x):
+        return self.sueldo_mes == x
+
+cocinero = Cocinero("Chef Carlos", 2500, 10, 15.5)
+mesero1 = Mesero("Ana", 1800, 8, 10.0, 300.0)
+mesero2 = Mesero("Luis", 2000, 5, 12.5, 450.0)
+admin1 = Administrativo("María", 3000.0, "Contadora")
+admin2 = Administrativo("Pedro", 2000.0, "Recepcionista")
+
+print("Sueldos totales:")
+for empleado in [cocinero, mesero1, mesero2, admin1, admin2]:
+    print(f"{empleado.nombre}: ${empleado.sueldo_total():.2f}")
+
+def mostrar_empleados(empleados, x):
+    print(f"\nEmpleados con sueldo mensual de ${x}:")
+    for emp in empleados:
+        if emp.sueldo_igual_a(x):
+            tipo = type(emp).__name__
+            print(f"- {emp.nombre} ({tipo})")
+
+
+todos_empleados = [cocinero, mesero1, mesero2, admin1, admin2]
+
+
+mostrar_empleados(todos_empleados, 2000)

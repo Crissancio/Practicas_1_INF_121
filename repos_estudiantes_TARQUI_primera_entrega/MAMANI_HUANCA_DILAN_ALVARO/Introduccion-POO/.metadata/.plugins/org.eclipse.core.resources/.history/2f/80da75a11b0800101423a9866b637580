@@ -1,0 +1,20 @@
+package Ejercicio_1;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		//b) Crea tres personas y muestra su saludo
+		Persona p1=new Persona("Melani",21,"La Paz");
+		Persona p2=new Persona("Daniel",8,"El Alto");
+		Persona p3=new Persona("Lizbeth",24,"La Paz");
+		
+		//a) Agrega un método para mostrar el saludo: “Hola, soy {nombre} de {ciudad}”
+		p1.MostarSaludo();
+		p2.MostarSaludo();
+		p3.MostarSaludo();
+		
+		//Utilizando un Metodo!
+		p1.nombre.VerificaMayorEdad();
+	}
+}

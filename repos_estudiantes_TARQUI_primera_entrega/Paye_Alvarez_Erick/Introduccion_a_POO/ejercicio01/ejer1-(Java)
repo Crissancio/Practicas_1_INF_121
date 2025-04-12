@@ -1,0 +1,35 @@
+public class Persona {
+    private String nombre;
+    private int edad;
+    private String ciudad;
+    
+    public Persona(String nombre, int edad, String ciudad) {
+        this.nombre = nombre;
+        this.edad = edad;
+        this.ciudad = ciudad;
+    }
+    
+    public void saludar() {
+        System.out.println("Hola, soy " + this.nombre + " de " + this.ciudad);
+    }
+    
+    public boolean esMayorDeEdad() {
+        return this.edad >= 18;
+    }
+    
+    public static void main(String[] args) {
+        Persona persona1 = new Persona("Maria", 25, "Ciudad de Mexico");
+        Persona persona2 = new Persona("Carlos", 17, "Guadalajara");
+        Persona persona3 = new Persona("Luisa", 30, "Monterrey");
+        
+        System.out.println("Saludos:");
+        persona1.saludar();
+        persona2.saludar();
+        persona3.saludar();
+        
+        System.out.println("\nVerificacion de edad:");
+        System.out.println(persona1.nombre + ": " + persona1.esMayorDeEdad());
+        System.out.println(persona2.nombre + ": " + persona2.esMayorDeEdad());
+        System.out.println(persona3.nombre + ": " + persona3.esMayorDeEdad());
+    }
+}

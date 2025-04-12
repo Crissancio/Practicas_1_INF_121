@@ -1,0 +1,25 @@
+class Persona:
+    def __init__(self, nombre, edad, ciudad):
+        self.nombre = nombre
+        self.edad = edad
+        self.ciudad = ciudad
+
+    def saludar(self):
+        print(f"Hola, soy {self.nombre} de {self.ciudad}")
+
+    def es_mayor_de_edad(self):
+        return self.edad >= 18
+
+persona1 = Persona("María", 25, "Ciudad de México")
+persona2 = Persona("Carlos", 17, "Guadalajara")
+persona3 = Persona("Luisa", 30, "Monterrey")
+
+print("Saludos:")
+persona1.saludar()
+persona2.saludar()
+persona3.saludar()
+
+print("\nVerificación de mayoría de edad:")
+print(f"{persona1.nombre} es mayor: {persona1.es_mayor_de_edad()}")
+print(f"{persona2.nombre} es mayor: {persona2.es_mayor_de_edad()}")
+print(f"{persona3.nombre} es mayor: {persona3.es_mayor_de_edad()}")

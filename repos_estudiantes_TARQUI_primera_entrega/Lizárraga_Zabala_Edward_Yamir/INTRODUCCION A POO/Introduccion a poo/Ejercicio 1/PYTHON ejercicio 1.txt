@@ -1,0 +1,24 @@
+class Persona:
+    def __init__(self, nombre, edad, ciudad):
+        self.nombre = nombre
+        self.edad = edad
+        self.ciudad = ciudad
+
+    def saludar(self):
+        print(f"Hola, soy {self.nombre} de {self.ciudad}")
+
+    def verificar_edad(self):
+        if self.edad >= 18:
+            print(f"{self.nombre} es mayor de edad")
+        else:
+            print(f"{self.nombre} no es mayor de edad")
+
+# Crear personas
+p1 = Persona("Carlos", 20, "Lima")
+p2 = Persona("Ana", 17, "Quito")
+p3 = Persona("Luis", 25, "Bogotá")
+
+# Mostrar saludos y edad
+for persona in [p1, p2, p3]:
+    persona.saludar()
+    persona.verificar_edad()

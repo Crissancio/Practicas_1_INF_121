@@ -1,0 +1,7 @@
+# Practica-1-INF-121
+
+## JHONATAN PLATA CRUZ
+
+## CI: 13373275
+
+## RU:1878235

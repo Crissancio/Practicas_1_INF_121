@@ -1,0 +1,53 @@
+public class Computadora {
+    private String cpu;
+    private String ram;
+    private String almacenamiento;
+    private String gpu;
+    private boolean estado;
+
+    public Computadora(String cpu, String ram, String almacenamiento, String gpu) {
+        this.cpu = cpu;
+        this.ram = ram;
+        this.almacenamiento = almacenamiento;
+        this.gpu = gpu;
+        this.estado = false;
+    }
+
+    public void encender() {
+        this.estado = true;
+        System.out.println("¡Computadora encendida!");
+    }
+
+    public void apagar() {
+        this.estado = false;
+        System.out.println("Computadora apagada");
+    }
+
+    public void mostrarEstado() {
+        String estadoActual = this.estado ? "Encendida" : "Apagada";
+        System.out.println("\nEstado de la computadora: " + estadoActual);
+        
+        if(this.estado) {
+            System.out.println("Componentes principales:");
+            System.out.println("- CPU: " + this.cpu);
+            System.out.println("- RAM: " + this.ram);
+            System.out.println("- Almacenamiento: " + this.almacenamiento);
+            System.out.println("- GPU: " + this.gpu);
+        }
+    }
+
+    public static void main(String[] args) {
+        Computadora miPc = new Computadora(
+            "Intel Core i7-12700K",
+            "32GB DDR5",
+            "1TB SSD NVMe",
+            "NVIDIA RTX 3080"
+        );
+
+        miPc.encender();
+        miPc.mostrarEstado();
+
+        miPc.apagar();
+        miPc.mostrarEstado();
+    }
+}

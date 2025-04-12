@@ -1,0 +1,68 @@
+from multimethod import multimethod
+class Oficina:
+    def __init__(self,nroSillas: int, nroEscritorios:int,nroEstanterias:int,):
+        self.nroSillas=nroSillas
+        self.nroEscritorios=nroEscritorios
+        self.nroEstanterias=nroEstanterias
+class Aula:
+    def __init__(self,nombre:str, capacidad:int,nropupitres:int,):
+        self.nombre=nombre
+        self.capacidad= capacidad
+        self.nropupitres=nropupitres
+        
+class Laboratorio:
+    def __init__(self,nombre:str, capacidad:int,nroMesas:int,nroSillas:int):
+        self.nombre=nombre
+        self.capacidad= capacidad
+        self.nroMesas=nroMesas
+        self.nroSillas=nroSillas
+def mostrar(mos):
+    if isinstance(mos, Oficina):
+        print("En la oficina hay:")
+        print(mos.nroSillas," sillas")
+        print(mos.nroEscritorios," escritorios")
+        print(mos.nroEstanterias," estanterias")
+        
+    if isinstance(mos, Aula):
+        print("En el aula: ",mos.nombre," hay:")
+        print("Una capasidad de ",mos.capacidad)
+        print(mos.nropupitres," pupitres")
+
+    if isinstance(mos, Laboratorio):
+        print("En el laboratorio: ",mos.nombre," hay:")
+        print("Una capasidad de ",mos.capacidad)
+        print(mos.nroMesas," mesas")
+        print(mos.nroSillas," sillas")
+    
+@multimethod
+def cantidadMuebles(o: Oficina):
+    print("La cantidad de muebles en la Oficina es:")
+    return o.nroSillas + o.nroEscritorios + o.nroEstanterias
+@multimethod
+def cantidadMuebles(a: Aula):
+    print("La cantidad de muebles en el aula ",a.nombre," es:")
+    return a.nropupitres
+@multimethod
+def cantidadMuebles(l: Laboratorio):
+    print("La cantidad de muebles en el laboratorio ",l.nombre," es:")
+    return l.nroMesas + l.nroSillas
+
+
+
+o1=Oficina(36,18,3)
+o2=Oficina(76,38,11)
+a1=Aula("aulaA",40,20)
+a2=Aula("aulaB",150,74)
+l1=Laboratorio("Lasin",30,19,24)
+
+mostrar(o1)
+mostrar(o2)
+mostrar(a1)
+mostrar(a2)
+mostrar(l1)
+
+print(cantidadMuebles(o1))
+print(cantidadMuebles(o2))
+print(cantidadMuebles(a1))
+print(cantidadMuebles(a2))
+print(cantidadMuebles(l1))

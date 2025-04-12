@@ -1,0 +1,128 @@
+//******************************************* Main  **********************************************
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Restaurante {
+    public static void main(String[] args) {
+        List<Empleado> empleados = new ArrayList<>();
+        empleados.add(new Cocinero("Chef Carlos", 2500, 10, 15.5));
+        empleados.add(new Mesero("Ana", 1800, 8, 10.0, 300.0));
+        empleados.add(new Mesero("Luis", 2000, 5, 12.5, 450.0));
+        empleados.add(new Administrativo("María", 3000.0, "Contadora"));
+        empleados.add(new Administrativo("Pedro", 2000.0, "Recepcionista"));
+
+        System.out.println("Sueldos totales:");
+        for (Empleado emp : empleados) {
+            String tipo = emp.getClass().getSimpleName();
+            System.out.printf("- %s (%s): $%.2f%n", ((Persona)emp).getNombre(), tipo, emp.sueldoTotal());
+        }
+
+        System.out.println("\nEmpleados con sueldo base de $2000:");
+        mostrarPorSueldoMes(empleados, 2000.0);
+    }
+
+    private static void mostrarPorSueldoMes(List<Empleado> empleados, double x) {
+        for (Empleado emp : empleados) {
+            if (emp.tieneSueldoMes(x)) {
+                String tipo = emp.getClass().getSimpleName();
+                System.out.printf("- %s (%s)%n", ((Persona)emp).getNombre(), tipo);
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+//**************************************************  ClasePersona.Java  ***********************************************************
+interface Empleado {
+    double sueldoTotal();
+    boolean tieneSueldoMes(double x);
+}
+
+abstract class Persona implements Empleado {
+    protected String nombre;
+    
+    public Persona(String nombre) {
+        this.nombre = nombre;
+    }
+    
+    public String getNombre() {
+        return nombre;
+    }
+}
+
+class Cocinero extends Persona {
+    private int sueldoMes;
+    private int horasExtra;
+    private double sueldoHora;
+
+    public Cocinero(String nombre, int sueldoMes, int horasExtra, double sueldoHora) {
+        super(nombre);
+        this.sueldoMes = sueldoMes;
+        this.horasExtra = horasExtra;
+        this.sueldoHora = sueldoHora;
+    }
+
+    @Override
+    public double sueldoTotal() {
+        return sueldoMes + (horasExtra * sueldoHora);
+    }
+
+    @Override
+    public boolean tieneSueldoMes(double x) {
+        return sueldoMes == x;
+    }
+}
+
+class Mesero extends Persona {
+    private int sueldoMes;
+    private int horasExtra;
+    private double sueldoHora;
+    private double propina;
+
+    public Mesero(String nombre, int sueldoMes, int horasExtra, double sueldoHora, double propina) {
+        super(nombre);
+        this.sueldoMes = sueldoMes;
+        this.horasExtra = horasExtra;
+        this.sueldoHora = sueldoHora;
+        this.propina = propina;
+    }
+
+    @Override
+    public double sueldoTotal() {
+        return sueldoMes + (horasExtra * sueldoHora) + propina;
+    }
+
+    @Override
+    public boolean tieneSueldoMes(double x) {
+        return sueldoMes == x;
+    }
+}
+
+class Administrativo extends Persona {
+    private double sueldoMes;
+    private String cargo;
+
+    public Administrativo(String nombre, double sueldoMes, String cargo) {
+        super(nombre);
+        this.sueldoMes = sueldoMes;
+        this.cargo = cargo;
+    }
+
+    @Override
+    public double sueldoTotal() {
+        return sueldoMes;
+    }
+
+    @Override
+    public boolean tieneSueldoMes(double x) {
+        return sueldoMes == x;
+    }
+}

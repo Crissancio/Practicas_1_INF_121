@@ -1,0 +1,27 @@
+class Coche:
+    def __init__(self, marca, modelo):
+        self.marca = marca
+        self.modelo = modelo
+        self.velocidad = 0
+
+    def acelerar(self):
+        self.velocidad += 10
+        print(f"{self.marca} {self.modelo} aceleró. Velocidad actual: {self.velocidad} km/h")
+
+    def frenar(self):
+        self.velocidad -= 5
+        if self.velocidad < 0:
+            self.velocidad = 0
+        print(f"{self.marca} {self.modelo} frenó. Velocidad actual: {self.velocidad} km/h")
+
+# Crear coches
+coche1 = Coche("Toyota", "Corolla")
+coche2 = Coche("Honda", "Civic")
+
+# Acciones
+coche1.acelerar()
+coche1.frenar()
+
+coche2.acelerar()
+coche2.acelerar()
+coche2.frenar()

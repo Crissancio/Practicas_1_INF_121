@@ -1,0 +1,58 @@
+package Ejercicio_7;
+
+import java.util.ArrayList;
+
+public class Celular {
+	private static final int MAX_APPS = 20;
+    private static final int MAX_ESPACIO = 1024; // en MB
+    private int bateria;
+    private int espacioDisponible;
+    private ArrayList<Aplicacion> aplicaciones;
+
+    public Celular() {
+        this.bateria = 100;
+        this.espacioDisponible = MAX_ESPACIO;
+        this.aplicaciones = new ArrayList<>();
+    }
+
+    public boolean instalarAplicacion(String nombre, int tamanio) {
+        if (aplicaciones.size() >= MAX_APPS) {
+            System.out.println("No se pueden instalar mas aplicaciones.");
+            return false;
+        }
+        if (tamanio > espacioDisponible) {
+            System.out.println("No hay suficiente espacio disponible.");
+            return false;
+        }
+        aplicaciones.add(new Aplicacion(nombre, tamanio));
+        espacioDisponible -= tamanio;
+        System.out.println("Aplicación " + nombre + " instalada correctamente.");
+        return true;
+    }
+
+    public void usarAplicacion(String nombre, int minutos) {
+        if (bateria <= 0) {
+            System.out.println("El celular esta apagado. Carga bateria.");
+            return;
+        }
+        for (Aplicacion app : aplicaciones) {
+            if (app.getNombre().equalsIgnoreCase(nombre)) {
+                int tamano = app.getTamano();
+                int consumo = 1; // 1% cada 10 minutos
+                if (tamano > 100) consumo = 2;
+                if (tamano > 250) consumo = 5;
+                int consumoTotal = (minutos / 10) * consumo;
+                bateria -= consumoTotal;
+                if (bateria < 0) bateria = 0;
+                System.out.println("Usando " + nombre + " por " + minutos + " minutos.");
+                System.out.println("Batería restante: " + bateria + "%");
+                return;
+            }
+        }
+        System.out.println("Aplicación no encontrada.");
+    }
+
+    public void mostrarBateria() {
+        System.out.println("Batería restante: " + bateria + "%");
+    }
+}

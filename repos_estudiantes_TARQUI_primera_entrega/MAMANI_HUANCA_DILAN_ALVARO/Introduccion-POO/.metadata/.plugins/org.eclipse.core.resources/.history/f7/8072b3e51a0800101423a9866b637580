@@ -1,0 +1,36 @@
+package Ejercicio_1;
+
+public class Persona {
+	String nombre;
+	int edad;
+	String ciudad;
+	
+	//Constructor
+	//b) Crea tres personas y muestra su saludo.
+	public Persona(String nomx, int edadx, String ciudadx) {
+		// TODO Auto-generated constructor stub
+		this.nombre=nomx;
+		this.edad=edadx;
+		this.ciudad=ciudadx;
+	}
+	
+	//c) Agrega un método para verificar si es mayor de edad
+	public void VerificaMayorEdad() {
+		if(edad>18){
+			System.out.println("Si es Mayor de Edad!");
+		}
+		else {
+			System.out.println("No es mayor de Edad!");
+		}
+	}
+
+	public int getEdad() {
+		return edad;
+	}
+	public String getNombre() {
+		return nombre;
+	}
+	public String getCiudad() {
+		return ciudad;
+	}
+}

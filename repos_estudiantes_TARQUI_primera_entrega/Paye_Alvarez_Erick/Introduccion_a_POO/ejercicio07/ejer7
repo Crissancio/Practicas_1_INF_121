@@ -1,0 +1,59 @@
+class Celular:
+    def __init__(self):
+        self.apps = []
+        self.espacio_ocupado = 0  
+        self.bateria = 100  
+    
+    def instalar_aplicacion(self, nombre, tamaño):
+        if len(self.apps) >= 20:
+            return "Límite de aplicaciones alcanzado (20)"
+        if self.espacio_ocupado + tamaño > 1024:
+            return "Espacio insuficiente (1024MB máximo)"
+        
+        self.apps.append({"nombre": nombre, "tamaño": tamaño})
+        self.espacio_ocupado += tamaño
+        return f"{nombre} instalada correctamente"
+    
+    def utilizar_aplicacion(self, nombre, minutos):
+        if self.bateria <= 0:
+            print("Celular apagado")
+            return
+        
+        for app in self.apps:
+            if app["nombre"] == nombre:
+                tamaño = app["tamaño"]
+                
+                if tamaño > 250:
+                    consumo = (minutos / 10) * 5
+                elif tamaño > 100:
+                    consumo = (minutos / 10) * 2
+                else:
+                    consumo = (minutos / 10) * 1
+                
+                if self.bateria - consumo <= 0:
+                    self.bateria = 0
+                    print("Celular apagado")
+                else:
+                    self.bateria -= consumo
+                return
+        
+        print("Aplicación no encontrada")
+    
+    def mostrar_bateria(self):
+        print(f"Batería restante: {self.bateria:.1f}%")
+
+mi_celular = Celular()
+
+print(mi_celular.instalar_aplicacion("WhatsApp", 200))
+print(mi_celular.instalar_aplicacion("Juego Pesado", 300))
+print(mi_celular.instalar_aplicacion("Calculadora", 50))
+
+mi_celular.utilizar_aplicacion("Juego Pesado", 30)  
+mi_celular.utilizar_aplicacion("WhatsApp", 45)      
+mi_celular.utilizar_aplicacion("Calculadora", 60)  
+
+mi_celular.mostrar_bateria()
+mi_celular.utilizar_aplicacion("Juego Pesado", 60)  
+mi_celular.mostrar_bateria()
+
+mi_celular.utilizar_aplicacion("WhatsApp", 100)

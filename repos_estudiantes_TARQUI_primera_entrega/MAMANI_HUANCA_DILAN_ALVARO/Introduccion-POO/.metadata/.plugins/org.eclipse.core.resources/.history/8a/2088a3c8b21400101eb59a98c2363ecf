@@ -1,0 +1,27 @@
+package Ejercicio_9;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// Crear una instancia de Laptop
+        Laptop miLaptop = new Laptop("Intel Core i7", 16, 512);
+
+        // Mostrar componentes
+        System.out.println("===== COMPONENTES DE LA COMPUTADORA =====");
+        miLaptop.mostrarComponentes();
+
+        // Mostrar estado, encender y apagar
+        System.out.println("\n===== ESTADO INICIAL =====");
+        miLaptop.mostrarEstado();
+
+        System.out.println("\n===== ENCENDIENDO LA COMPUTADORA =====");
+        miLaptop.encender();
+        miLaptop.mostrarEstado();
+
+        System.out.println("\n===== APAGANDO LA COMPUTADORA =====");
+        miLaptop.apagar();
+        miLaptop.mostrarEstado();
+
+	}
+
+}

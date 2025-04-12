@@ -1,0 +1,41 @@
+public class Coche {
+    private String marca;
+    private String modelo;
+    private int velocidad;
+    
+    public Coche(String marca, String modelo, int velocidadInicial) {
+        this.marca = marca;
+        this.modelo = modelo;
+        this.velocidad = velocidadInicial;
+    }
+
+    public void acelerar() {
+        velocidad += 10;
+    }
+    
+    public void frenar() {
+        velocidad = Math.max(0, velocidad - 5); 
+    }
+    
+    public void mostrarVelocidad() {
+        System.out.println("Velocidad actual de " + marca + " " + modelo + ": " + velocidad + " km/h");
+    }
+    
+    public static void main(String[] args) {
+        
+        Coche coche1 = new Coche("Toyota", "Corolla", 50);
+        Coche coche2 = new Coche("Honda", "Civic", 40);
+       
+        coche1.acelerar();
+        coche1.acelerar();
+        coche1.frenar();
+        
+        coche2.acelerar();
+        coche2.frenar();
+        coche2.frenar();
+        
+        System.out.println("Velocidades finales:");
+        coche1.mostrarVelocidad();
+        coche2.mostrarVelocidad();
+    }
+}

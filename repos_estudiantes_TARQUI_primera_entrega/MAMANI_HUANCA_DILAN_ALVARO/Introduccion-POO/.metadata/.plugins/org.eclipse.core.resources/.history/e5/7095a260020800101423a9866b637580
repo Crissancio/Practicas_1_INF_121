@@ -1,0 +1,29 @@
+package Ejercicio_1;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		//b) Crea tres personas y muestra su saludo
+		Persona p1=new Persona("Melani",21,"La Paz");
+		Persona p2=new Persona("Daniel",8,"El Alto");
+		Persona p3=new Persona("Lizbeth",24,"La Paz");
+		
+		p1.toString();
+		p2.toString();
+		p3.toString();
+		
+		//Utilizando Getter
+		//c) Agrega un método para verificar si es mayor de edad
+		if(p1.getEdad()>18){
+			System.out.println("Si es Mayor de Edad!");
+		}
+		else {
+			System.out.println("No es mayor de Edad!");
+		}
+		
+		//Utilizando un Metoodo!
+		//VerificaMayorEdad(p1);
+		p1.VerificaMayorEdad();
+	}
+}

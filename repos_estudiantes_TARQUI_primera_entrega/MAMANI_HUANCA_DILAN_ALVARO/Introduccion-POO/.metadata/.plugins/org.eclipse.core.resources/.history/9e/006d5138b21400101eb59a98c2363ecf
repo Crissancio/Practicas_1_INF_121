@@ -1,0 +1,39 @@
+package Ejercicio_9;
+
+public class Laptop extends Computadora{
+	
+	public Laptop(String procesadorx, int ramX, int almacenamientoX) {
+		super(procesadorx, almacenamientoX, ramX);
+	}
+	
+	//Implementacion de los metodos ABSTRACTOS
+	//Encender
+	@Override
+	public void encender() {
+        if (!encendida) {
+            encendida = true;
+            System.out.println("La laptop se está encendiendo...");
+        } else {
+            System.out.println("La laptop ya está encendida.");
+        }
+    }
+	//Apagar
+	@Override
+    public void apagar() {
+        if (encendida) {
+            encendida = false;
+            System.out.println("La laptop se está apagando...");
+        } else {
+            System.out.println("La laptop ya está apagada.");
+        }
+    }
+
+    // Mmostrar estado actual
+    public void mostrarEstado() {
+        if (encendida) {
+            System.out.println("Estado: ENCENDIDA");
+        } else {
+            System.out.println("Estado: APAGADA");
+        }
+    }
+}

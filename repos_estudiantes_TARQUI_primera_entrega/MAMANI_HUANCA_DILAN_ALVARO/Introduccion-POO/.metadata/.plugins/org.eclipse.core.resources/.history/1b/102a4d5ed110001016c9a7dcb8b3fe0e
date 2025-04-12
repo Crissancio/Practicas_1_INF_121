@@ -1,0 +1,19 @@
+package Ejercicio_7;
+
+public class Aplicacion {
+	private String nombre;
+    private int tamano; // en MB
+
+    public Aplicacion(String nombre, int tamano) {
+        this.nombre = nombre;
+        this.tamano = tamano;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public int getTamano() {
+        return tamano;
+    }
+}

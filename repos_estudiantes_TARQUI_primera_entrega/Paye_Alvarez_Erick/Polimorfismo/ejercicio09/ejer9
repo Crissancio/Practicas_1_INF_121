@@ -1,0 +1,53 @@
+class BloqueCofre:
+    def __init__(self, capacidad, resistencia, tipo):
+        self.capacidad = capacidad
+        self.resistencia = resistencia
+        self.tipo = tipo
+
+    def accion(self):
+        print("Abriendo cofre... ¡Puedes guardar items!")
+
+    def colocar(self, orientacion="suelo"):
+        print(f"Cofre colocado en {orientacion}")
+
+    def romper(self):
+        print("¡Cofre roto! Los items caen al suelo")
+
+class BloqueTnt:
+    def __init__(self, tipo, daño):
+        self.tipo = tipo
+        self.daño = daño
+
+    def accion(self):
+        print("¡TNT activada! ¡Explotará en 4 segundos!")
+
+    def colocar(self, orientacion="suelo"):
+        print(f"TNT colocada en {orientacion}")
+
+    def romper(self):
+        print("¡CUIDADO! Romper TNT puede causar explosión")
+
+class BloqueHorno:
+    def __init__(self, color, capacidadComida):
+        self.color = color
+        self.capacidadComida = capacidadComida
+
+    def accion(self):
+        print("Horno encendido... ¡Cocinando alimentos!")
+
+    def colocar(self, orientacion="suelo"):
+        print(f"Horno colocado en {orientacion}")
+
+    def romper(self):
+        print("Horno destruido... ¡Piedra caliente caída!")
+
+cofre_madera = BloqueCofre(27, 50, "Madera")
+cofre_ender = BloqueCofre(54, 100, "End")
+tnt_normal = BloqueTnt("Normal", 50)
+tnt_mini = BloqueTnt("Mini", 20)
+horno_piedra = BloqueHorno("Gris", 3)
+horno_nether = BloqueHorno("Negro", 5)
+
+cofre_madera.accion()
+tnt_normal.colocar("pared")
+horno_nether.romper()
