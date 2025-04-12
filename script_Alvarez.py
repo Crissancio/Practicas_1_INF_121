@@ -11,7 +11,7 @@ df = pd.read_csv(ruta_csv)
 
 # --- Solicitar rango de revisión por consola ---
 inicio = 0
-fin = 35
+fin = 44
 sub_df = df.iloc[inicio:fin]
 
 # Lista para errores

@@ -10,8 +10,8 @@ ruta_csv = "estudiantes_primera_entrega.csv"
 df = pd.read_csv(ruta_csv)
 
 # --- Solicitar rango de revisión por consola ---
-inicio = int(input("Fila inicial (comienza en 0): "))
-fin = int(input("Fila final (no incluida): "))
+inicio = 44
+fin = 85
 sub_df = df.iloc[inicio:fin]
 
 # Lista para errores
