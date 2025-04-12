@@ -1,0 +1,61 @@
+class Bloque:
+    def __init__(self, nombre):
+        self.nombre = nombre
+
+    def accion(self):
+        print(f"{self.nombre}: Realizando acción genérica del bloque.")
+
+    def colocar(self, orientacion="suelo"):
+        print(f"{self.nombre} colocado en el {orientacion}.")
+
+    def romper(self):
+        print(f"{self.nombre} fue roto sin efectos especiales.")
+
+class BloqueCofre(Bloque):
+    def __init__(self):
+        super().__init__("Bloque Cofre")
+
+    def accion(self):
+        print("Abriendo el cofre... ¡Hay objetos dentro!")
+
+    def romper(self):
+        print("El cofre fue roto. ¡Los objetos se dispersaron!")
+
+class BloqueTnt(Bloque):
+    def __init__(self):
+        super().__init__("Bloque TNT")
+
+    def accion(self):
+        print("Encendiendo la TNT... ¡Explosión inminente!")
+
+    def romper(self):
+        print("¡Boom! Rompiste la TNT y explotó.")
+
+class BloqueHorno(Bloque):
+    def __init__(self):
+        super().__init__("Bloque Horno")
+
+    def accion(self):
+        print("Usando el horno... Cocinando ítems.")
+
+    def romper(self):
+        print("El horno fue roto. Se perdió el contenido cocinando.")
+
+def main():
+    bloques = [
+        BloqueCofre(), BloqueCofre(),
+        BloqueTnt(), BloqueTnt(),
+        BloqueHorno(), BloqueHorno()
+    ]
+
+    for bloque in bloques:
+        bloque.colocar()                    
+        bloque.colocar("pared")            
+        bloque.accion()
+        bloque.romper()
+        print("-" * 40)
+
+if __name__ == "__main__":
+    main()
+
+

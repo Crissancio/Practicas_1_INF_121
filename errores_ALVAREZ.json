@@ -6,6 +6,7 @@
     "enlace": "https://carl-ap.github.io/tarea1p2/",
     "error_msg": "Cmd('git') failed due to: exit code(128)\n  cmdline: git clone -v -- https://carl-ap.github.io/tarea1p2/ repos_estudiantes_ALVAREZ_primera_entrega/Alcon_Payi_Carlos_Yamil\n  stderr: 'Cloning into 'repos_estudiantes_ALVAREZ_primera_entrega/Alcon_Payi_Carlos_Yamil'...\nfatal: repository 'https://carl-ap.github.io/tarea1p2/' not found\n'"
   },
+  /*
   {
     "paterno": "Alcon",
     "materno": "Espejo",
@@ -13,6 +14,7 @@
     "enlace": "https://github.com/jole908455/Introduccion-a-POO?search=1",
     "error_msg": "Cmd('git') failed due to: exit code(128)\n  cmdline: git clone -v -- https://github.com/jole908455/Introduccion-a-POO?search=1 repos_estudiantes_ALVAREZ_primera_entrega/Alcon_Espejo_Joel_Gabriel\n  stderr: 'Cloning into 'repos_estudiantes_ALVAREZ_primera_entrega/Alcon_Espejo_Joel_Gabriel'...\nfatal: https://github.com/jole908455/Introduccion-a-POO?search=1/info/refs not valid: is this a git repository?\n'"
   },
+  
   {
     "paterno": "CALLE",
     "materno": "CASTILLO",
@@ -20,6 +22,7 @@
     "enlace": "https://github.com/Cris123javier/PRACTICA1-PROGRAMACION-II/commit/af4a33f372d9bc3be634e19bd08f9726ab15e182",
     "error_msg": "Cmd('git') failed due to: exit code(128)\n  cmdline: git clone -v -- https://github.com/Cris123javier/PRACTICA1-PROGRAMACION-II/commit/af4a33f372d9bc3be634e19bd08f9726ab15e182 repos_estudiantes_ALVAREZ_primera_entrega/CALLE_CASTILLO_CRISTHIAN_JAVIER\n  stderr: 'Cloning into 'repos_estudiantes_ALVAREZ_primera_entrega/CALLE_CASTILLO_CRISTHIAN_JAVIER'...\nremote: Not Found\nfatal: repository 'https://github.com/Cris123javier/PRACTICA1-PROGRAMACION-II/commit/af4a33f372d9bc3be634e19bd08f9726ab15e182/' not found\n'"
   },
+  */
   {
     "paterno": "Chura",
     "materno": "Garcia",
@@ -27,6 +30,7 @@
     "enlace": "https://github.com/Crisver-Emanuel-Chura-Garcia/Pr-ctica-1/tree/main",
     "error_msg": "Cmd('git') failed due to: exit code(128)\n  cmdline: git clone -v -- https://github.com/Crisver-Emanuel-Chura-Garcia/Pr-ctica-1/tree/main repos_estudiantes_ALVAREZ_primera_entrega/Chura_Garcia_Crisver_Emanuel\n  stderr: 'Cloning into 'repos_estudiantes_ALVAREZ_primera_entrega/Chura_Garcia_Crisver_Emanuel'...\nfatal: repository 'https://github.com/Crisver-Emanuel-Chura-Garcia/Pr-ctica-1/tree/main/' not found\n'"
   },
+  /*
   {
     "paterno": "FERNANDEZ",
     "materno": "CHIPANA",
@@ -34,6 +38,7 @@
     "enlace": "https://github.com/Soraya808/auxi1/tree/main",
     "error_msg": "Cmd('git') failed due to: exit code(128)\n  cmdline: git clone -v -- https://github.com/Soraya808/auxi1/tree/main repos_estudiantes_ALVAREZ_primera_entrega/FERNANDEZ_CHIPANA_GABRIELA_SORAYA\n  stderr: 'Cloning into 'repos_estudiantes_ALVAREZ_primera_entrega/FERNANDEZ_CHIPANA_GABRIELA_SORAYA'...\nfatal: repository 'https://github.com/Soraya808/auxi1/tree/main/' not found\n'"
   },
+  */
   {
     "paterno": "FLORES",
     "materno": "MAMANI",

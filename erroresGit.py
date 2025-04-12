@@ -1,28 +1,29 @@
 import os
 import shutil
+import glob
 
-# Ruta base donde están los clones
-base_path = "./repos_estudiantes_TARQUI_primera_entrega"
+# Ruta base con comodín
+base_path = "./repos_estudiantes_ALVAREZ_primera_entrega/*/*/"
 
-# Verifica si la ruta existe
-if not os.path.exists(base_path):
-    print(f"La carpeta {base_path} no existe.")
+# Usa glob para obtener todas las rutas que coincidan
+carpetas = glob.glob(base_path)
+
+if not carpetas:
+    print(f"No se encontraron carpetas en la ruta: {base_path}")
     exit()
 
-# Recorre cada subcarpeta
-for nombre_carpeta in os.listdir(base_path):
-    ruta_carpeta = os.path.join(base_path, nombre_carpeta)
-
+# Recorre cada carpeta encontrada
+for ruta_carpeta in carpetas:
     if os.path.isdir(ruta_carpeta):
         ruta_git = os.path.join(ruta_carpeta, ".git")
 
         if os.path.exists(ruta_git):
             try:
                 shutil.rmtree(ruta_git)
-                print(f"✅ .git eliminado en: {nombre_carpeta}")
+                print(f"✅ .git eliminado en: {ruta_carpeta}")
             except Exception as e:
-                print(f"❌ Error eliminando .git en {nombre_carpeta}: {e}")
+                print(f"❌ Error eliminando .git en {ruta_carpeta}: {e}")
         else:
-            print(f"ℹ️ No se encontró .git en: {nombre_carpeta}")
+            print(f"ℹ️ No se encontró .git en: {ruta_carpeta}")
 
 print("\n🧹 Limpieza finalizada.")
